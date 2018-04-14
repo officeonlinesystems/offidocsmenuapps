@@ -30,28 +30,28 @@ This navigation appear as shown in the following pictures:
 
 ![alt text](https://www.offidocs.com/images/navbarwithapps.jpg)
 
-Yo use this navigation bar you only need to include the HTML code
+To use this navigation bar you only need to include the HTML code of the offidocsmenubar.html file.
 
-window.location.href = 'https://www.offidocs.com/create-gimp.html?username=' + username;
-	//window.open('https://www.offidocs.com/create-openofficewriter.html?username=' + username, '_blank');
-	window.location.href = 'https://www.offidocs.com/create-openofficewriter.html?username=' + username;
-        //window.open('https://www.offidocs.com/create-openofficecalc.html?username=' + username, '_blank');
-	window.location.href = 'https://www.offidocs.com/create-openofficecalc.html?username=' + username;
-	//window.open('https://www.offidocs.com/create-openofficeimpress.html?username=' + username, '_blank');
-	window.location.href = 'https://www.offidocs.com/create-openofficeimpress.html?username=' + username;
-	window.location.href = 'https://www.offidocs.com/create-pdfedit.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-openshot.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-sweep.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-inkscape.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-audacity.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-avidemux.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-lmms.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-dia.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-eclipse.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-geany.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-projectlibre.html?username=' + username;
-	window.open('https://www.offidocs.com/create-messagegram.html?username=' + username, '_blank');
-        window.location.href = 'https://www.offidocs.com/create-openofficedraw.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-chess.html?username=' + username;
-        window.location.href = 'https://www.offidocs.com/create-fourinrow.html?username=' + username;
-	window.open('https://www.offidocs.com/SOGo/', '_blank');
+You can also opt to create direct links to use each application, but change the username to your own instead of using demo01:
+
+https://www.offidocs.com/create-gimp.html?username=demo01
+https://www.offidocs.com/create-openofficewriter.html?username=demo01
+https://www.offidocs.com/create-openofficecalc.html?username=demo01
+https://www.offidocs.com/create-openofficeimpress.html?username=demo01
+https://www.offidocs.com/create-openofficeimpress.html?username=demo01
+https://www.offidocs.com/create-pdfedit.html?username=demo01
+https://www.offidocs.com/create-openshot.html?username=demo01
+https://www.offidocs.com/create-sweep.html?username=demo01
+https://www.offidocs.com/create-inkscape.html?username=demo01
+https://www.offidocs.com/create-audacity.html?username=demo01
+https://www.offidocs.com/create-avidemux.html?username=demo01
+https://www.offidocs.com/create-lmms.html?username=demo01
+https://www.offidocs.com/create-dia.html?username=demo01
+https://www.offidocs.com/create-eclipse.html?username=demo01
+https://www.offidocs.com/create-geany.html?username=demo01
+https://www.offidocs.com/create-projectlibre.html?username=demo01
+https://www.offidocs.com/create-messagegram.html?username=demo01
+https://www.offidocs.com/create-openofficedraw.html?username=demo01
+https://www.offidocs.com/create-chess.html?username=demo01
+https://www.offidocs.com/create-fourinrow.html?username=demo01
+https://www.offidocs.com/SOGo/

@@ -1,0 +1,141 @@
+<div style="background: rgb(221, 221, 221); position: fixed; z-index: 80001; bottom: 0px; padding-left: 15px; height: 80px;"><h3 style="width: 135px;">OffiDocs Apps:</h3></div>
+<div style="background: rgb(221, 221, 221); position: fixed; z-index: 80000; padding-right: 15px; bottom: 0px; padding-left: 150px; width: 100%; height: 80px;"><div style="position: relative; padding: 0 11px; box-sizing: border-box;"><nav id="pnProductNav" style="overflow-x: auto; overflow-y: hidden;  -webkit-overflow-scrolling: touch; white-space: nowrap; position: relative; font-size: 0;"><div id="pnProductNavContents" style="padding-top: 5px; padding-bottom: 10px; float: left; -webkit-transition: -webkit-transform .2s ease-in-out; transition: -webkit-transform .2s ease-in-out; transition: transform .2s ease-in-out; transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out; position: relative;"><a href="javascript:void(0)" style="padding: 3px;" title="OpenOffice Writer">OffiDocs Apps:</a><a href="javascript:void(0)" style="padding: 3px;" title="OpenOffice Writer" onclick="loginform1()"><img src="https://www.offidocs.com/community/wordsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="OpenOffice Calc" onclick="loginform2()"><img src="https://www.offidocs.com/community/excelsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="OpenOffice Impress" onclick="loginform3()"><img src="https://www.offidocs.com/community/pptsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="PDF editor online" onclick="loginform4()"><img src="https://www.offidocs.com/community/pdfsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Gimp image editor" onclick="loginform0()"><img src="https://www.offidocs.com/community/gimpsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Inkscape vector editor" onclick="loginformInkscape()"><img src="https://www.offidocs.com/community/inkscapesmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="OpenOffice Draw" onclick="loginformOpenOfficeDraw()"><img src="https://www.offidocs.com/community/openofficedrawsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Audacity audio editor" onclick="loginformAudacity()"><img src="https://www.offidocs.com/community/audacitysmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Avidemux video editor" onclick="loginformAvidemux()"><img src="https://www.offidocs.com/community/avidemuxsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="LMMS music creator" onclick="loginformlmms()"><img src="https://www.offidocs.com/community/lmmssmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Openshot video editor" onclick="loginform5()"><img src="https://www.offidocs.com/community/openshotsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Sweep audio editor" onclick="loginform6()"><img src="https://www.offidocs.com/community/sweepsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Dia diagram editor" onclick="loginformDia()"><img src="https://www.offidocs.com/community/diasmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Eclipse IDE program" onclick="loginformEclipse()"><img src="https://www.offidocs.com/community/eclipsesmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Geany IDE program" onclick="loginformGeany()"><img src="https://www.offidocs.com/community/geanysmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Planner project plan" onclick="loginformPlanner()"><img src="https://www.offidocs.com/community/plannersmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Telegram web" onclick="loginformTelegram()"><img src="https://www.offidocs.com/community/telegramsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="OffiLive free email" onclick="loginformOffiLive() ()"><img src="https://www.offidocs.com/community/offilivesmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Chess online" onclick="loginformChess()"><img src="https://www.offidocs.com/community/chesssmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Four in a row online" onclick="loginformFourRow()"><img src="https://www.offidocs.com/community/fourinrowsmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Openshot video editor" onclick="loginform5()"><img src="https://www.offidocs.com/community/videosmall.png?service=community01&amp;v=2"></a><a href="javascript:void(0)" style="padding: 3px;" title="Sweep audio editor" onclick="loginform6()"><img src="https://www.offidocs.com/community/audiosmall.png?service=community01&amp;v=2"></a></div></nav></div></div>
+
+<script>
+
+var userxxx;
+if ( !localStorage.getItem("namexxx") )
+{
+        userxxx = Math.floor(Math.random() * 2000000);
+        localStorage.setItem("namexxx", userxxx);
+}
+  
+  
+function loginform0() {
+        var username = localStorage.getItem('namexxx');
+        //window.open('https://www.offidocs.com/create-gimp.html?username=' + username, '_blank');
+        window.location.href = 'https://www.offidocs.com/create-gimp.html?username=' + username;
+        return false;
+}
+
+
+function loginform1() {
+        var username = localStorage.getItem('namexxx');
+        //window.open('https://www.offidocs.com/create-openofficewriter.html?username=' + username, '_blank');
+        window.location.href = 'https://www.offidocs.com/create-openofficewriter.html?username=' + username;
+        return false;
+}
+
+
+function loginform2() {
+        var username = localStorage.getItem('namexxx');
+        //window.open('https://www.offidocs.com/create-openofficecalc.html?username=' + username, '_blank');
+        window.location.href = 'https://www.offidocs.com/create-openofficecalc.html?username=' + username;
+        return false;
+}
+
+
+function loginform3() {
+        var username = localStorage.getItem('namexxx');
+        //window.open('https://www.offidocs.com/create-openofficeimpress.html?username=' + username, '_blank');
+        window.location.href = 'https://www.offidocs.com/create-openofficeimpress.html?username=' + username;
+        return false;
+}
+
+function loginform4() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-pdfedit.html?username=' + username;
+        return false;
+}
+
+function loginform5() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-openshot.html?username=' + username;
+        return false;
+}
+
+function loginform6() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-sweep.html?username=' + username;
+        return false;
+}
+
+function loginformInkscape() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-inkscape.html?username=' + username;
+        return false;
+}
+
+function loginformAudacity() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-audacity.html?username=' + username;
+        return false;
+}
+
+function loginformAvidemux() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-avidemux.html?username=' + username;
+        return false;
+}
+
+function loginformlmms() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-lmms.html?username=' + username;
+        return false;
+}
+
+function loginformDia() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-dia.html?username=' + username;
+        return false;
+}
+
+function loginformEclipse() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-eclipse.html?username=' + username;
+        return false;
+}
+
+function loginformGeany() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-geany.html?username=' + username;
+        return false;
+}
+
+function loginformPlanner() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-projectlibre.html?username=' + username;
+        return false;
+}
+
+function loginformTelegram() {
+        var username = localStorage.getItem('namexxx');
+        window.open('https://www.offidocs.com/create-messagegram.html?username=' + username, '_blank');
+        return false;
+}
+
+function loginformOpenOfficeDraw() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-openofficedraw.html?username=' + username;
+        return false;
+}
+
+function loginformChess() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-chess.html?username=' + username;
+        return false;
+}
+
+function loginformFourRow() {
+        var username = localStorage.getItem('namexxx');
+        window.location.href = 'https://www.offidocs.com/create-fourinrow.html?username=' + username;
+        return false;
+}
+
+function loginformOffiLive() {
+        var username = localStorage.getItem('namexxx');
+        window.open('https://www.offidocs.com/SOGo/', '_blank');
+        return false;
+}
+
+</script>

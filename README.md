@@ -34,24 +34,24 @@ To use this navigation bar you only need to include the HTML code of the offidoc
 
 You can also opt to create direct links to use each application, but change the username to your own instead of using demo01:
 
-https://www.offidocs.com/create-gimp.html?username=demo01
-https://www.offidocs.com/create-openofficewriter.html?username=demo01
-https://www.offidocs.com/create-openofficecalc.html?username=demo01
-https://www.offidocs.com/create-openofficeimpress.html?username=demo01
-https://www.offidocs.com/create-openofficeimpress.html?username=demo01
-https://www.offidocs.com/create-pdfedit.html?username=demo01
-https://www.offidocs.com/create-openshot.html?username=demo01
-https://www.offidocs.com/create-sweep.html?username=demo01
-https://www.offidocs.com/create-inkscape.html?username=demo01
-https://www.offidocs.com/create-audacity.html?username=demo01
-https://www.offidocs.com/create-avidemux.html?username=demo01
-https://www.offidocs.com/create-lmms.html?username=demo01
-https://www.offidocs.com/create-dia.html?username=demo01
-https://www.offidocs.com/create-eclipse.html?username=demo01
-https://www.offidocs.com/create-geany.html?username=demo01
-https://www.offidocs.com/create-projectlibre.html?username=demo01
-https://www.offidocs.com/create-messagegram.html?username=demo01
-https://www.offidocs.com/create-openofficedraw.html?username=demo01
-https://www.offidocs.com/create-chess.html?username=demo01
-https://www.offidocs.com/create-fourinrow.html?username=demo01
-https://www.offidocs.com/SOGo/
+* https://www.offidocs.com/create-gimp.html?username=demo01
+* https://www.offidocs.com/create-openofficewriter.html?username=demo01
+* https://www.offidocs.com/create-openofficecalc.html?username=demo01
+* https://www.offidocs.com/create-openofficeimpress.html?username=demo01
+* https://www.offidocs.com/create-openofficeimpress.html?username=demo01
+* https://www.offidocs.com/create-pdfedit.html?username=demo01
+* https://www.offidocs.com/create-openshot.html?username=demo01
+* https://www.offidocs.com/create-sweep.html?username=demo01
+* https://www.offidocs.com/create-inkscape.html?username=demo01
+* https://www.offidocs.com/create-audacity.html?username=demo01
+* https://www.offidocs.com/create-avidemux.html?username=demo01
+* https://www.offidocs.com/create-lmms.html?username=demo01
+* https://www.offidocs.com/create-dia.html?username=demo01
+* https://www.offidocs.com/create-eclipse.html?username=demo01
+* https://www.offidocs.com/create-geany.html?username=demo01
+* https://www.offidocs.com/create-projectlibre.html?username=demo01
+* https://www.offidocs.com/create-messagegram.html?username=demo01
+* https://www.offidocs.com/create-openofficedraw.html?username=demo01
+* https://www.offidocs.com/create-chess.html?username=demo01
+* https://www.offidocs.com/create-fourinrow.html?username=demo01
+* https://www.offidocs.com/SOGo/

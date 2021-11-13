@@ -1,0 +1,1223 @@
+↑ Jump to Table of Contents
+→ Pop Out Sidebar
+
+ARIA in HTML
+W3C Working Draft 06 December 2019
+This version:
+https://www.w3.org/TR/2019/WD-html-aria-20191206/
+Latest published version:
+https://www.w3.org/TR/html-aria/
+Latest editor's draft:
+https://w3c.github.io/html-aria/
+Previous version:
+https://www.w3.org/TR/2019/WD-html-aria-20191203/
+Editors:
+Steve Faulkner (The Paciello Group)
+Scott O'Hara (The Paciello Group)
+Participate:
+GitHub w3c/html-aria
+File a bug
+Commit history
+Pull requests
+Copyright © 2019 W3C® (MIT, ERCIM, Keio, Beihang). W3C liability, trademark and permissive document license rules apply.
+
+Abstract
+This specification defines the web developer rules (author conformance requirements) for the use of Accessible Rich Internet Applications (WAI-ARIA) 1.1 and Digital Publishing WAI-ARIA Module 1.0 attributes on [HTML] elements. It also defines requirements for Conformance Checking tools.
+Status of This Document
+This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the W3C technical reports index at https://www.w3.org/TR/.
+
+ARIA in HTML is a [HTML] specification module. Any HTML features, conformance requirements, or terms that this specification module makes reference to, but does not explicitly define, are defined in the [HTML] specification.
+
+This is a draft document and its contents are subject to change without notice.
+
+This document was published by the Web Applications Working Group as a Working Draft. This document is intended to become a W3C Recommendation.
+
+GitHub Issues are preferred for discussion of this specification. Alternatively, you can send comments to our mailing list. Please send them to public-html@w3.org (archives).
+
+Publication as a Working Draft does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+
+This document was produced by a group operating under the W3C Patent Policy. W3C maintains a public list of any patent disclosures made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains Essential Claim(s) must disclose the information in accordance with section 6 of the W3C Patent Policy.
+
+This document is governed by the 1 March 2019 W3C Process Document.
+
+Table of Contents
+1.Web developer requirements for use of ARIA in HTML
+2.Document conformance requirements for use of ARIA attributes in HTML
+3.Case requirements for ARIA role, state and property attributes
+4.Allowed ARIA roles, states and properties
+5.Conformance
+A.References
+A.1Normative references
+A.2Informative references
+1. Web developer requirements for use of ARIA in HTML
+Web developers MAY use the ARIA role and aria-* attributes on HTML elements, in accordance with the requirements described in [wai-aria-1.1], except where these conflict with the strong native semantics or are equal to the implicit ARIA semantics of a given HTML element. These constraints, are intended to prevent developers from making assistive technology products report nonsensical user interface (UI) information that does not represent the actual UI of the document.
+
+Web developers MUST NOT use the ARIA role and aria-* attributes in a manner that conflicts with the semantics described in the § 2. Document conformance requirements for use of ARIA attributes in HTML table. Web developers SHOULD NOT set the ARIA role and aria-* attributes to values that match the implicit ARIA semantics defined in the table.
+
+EXAMPLE 1
+The following uses a role=heading on a button element. This is not allowed, because the button element has default characteristics that conflict with the heading role.
+<button role="heading">search</button>
+2. Document conformance requirements for use of ARIA attributes in HTML
+The following table provides normative per-element document-conformance requirements for the use of ARIA markup in HTML documents and describes the implicit ARIA semantics that apply to HTML elements as defined in the HTML Accessibility API Mappings 1.0 [html-aam-1.0] specification.
+
+Each language feature (element or attribute) in a cell in the first column implies the ARIA semantics (any role, states, and properties) given in the cell in the second column of the same row. The third cell in each row defines which ARIA role values and aria-* attributes which MAY be used. Where a cell in the third column includes the term Any role it indicates that any role value apart from the implicit ARIA semantics role value, MAY be used. If an cell in the third column includes the term No role it indicates that authors MUST NOT overwrite the implicit ARIA semantics, or native semantics of the HTML element.
+
+NOTE
+Setting an ARIA role and/or aria-* attribute that matches the implicit ARIA semantics is unnecessary and is NOT RECOMMENDED as these properties are already set by the browser.
+
+Rules of ARIA attribute usage by HTML feature
+HTML feature	
+Implicit ARIA semantics -
+
+SHOULD NOT be used
+
+ARIA roles, states and properties which MAY be used
+a with href	role=link	
+Roles: button, checkbox, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch, tab or treeitem
+
+DPub Roles: doc-backlink, doc-biblioref, doc-glossref, doc-noteref
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+a without href	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+abbr	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+address	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+area with href	role=link	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the link role.
+
+area without href	No corresponding role	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+article	role=article	
+Roles: feed, presentation, none, document, application, main or region.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+aside	role=complementary	
+Roles: feed, note, presentation, none, region or search.
+
+DPub Roles: doc-dedication, doc-example, doc-footnote, doc-pullquote, doc-tip
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+audio	No corresponding role	
+Role: application
+
+Global aria-* attributes and any aria-* attributes applicable to the application role.
+
+autonomous custom element	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+b	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+base	No corresponding role	No role or aria-* attributes
+bdi	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+bdo	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+blockquote	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+body	role=document	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the document role.
+
+br	No corresponding role	
+Roles: presentation or none.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+button	role=button	
+Roles: checkbox, link, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch or tab.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+canvas	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+caption	No corresponding role	
+No role
+
+Global aria-* attributes
+
+cite	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+code	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+col
+
+No corresponding role	No role or aria-* attributes
+colgroup
+
+No corresponding role	No role or aria-* attributes
+data	No corresponding role	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+datalist	role=listbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the listbox role.
+
+dd	role=definition	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the definition role.
+
+del	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+dfn	role=term	Any role
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+details	role=group	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the group role.
+
+dialog	role=dialog	
+Role: alertdialog
+
+Global aria-* attributes and any aria-* attributes applicable to the dialog role.
+
+div	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+dl	No corresponding role	
+Roles: group, list, presentation or none.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+dt	role=term	
+Role: listitem
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+em	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+embed	No corresponding role	
+Roles: application, document, img, presentation or none.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+figcaption	No corresponding role	
+Roles: group, presentation or none.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+fieldset	role=group	
+Roles: none, presentation or radiogroup.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+figure	role=figure	
+Roles: group, none or presentation.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+footer	If not a descendant of an article, aside, main, nav or section element, or an element with role=article, complementary, main, navigation or region then role=contentinfo, otherwise No corresponding role.	
+Roles: group, none or presentation.
+
+DPub Roles: doc-footnote
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed.
+
+form	role=form if the form element has an accessible name. Otherwise, no corresponding role.	
+Roles: search, none or presentation.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+h1 to h6	role=heading, with the aria-level = positive integer.	
+Roles: none, presentation or tab.
+
+DPub Role: doc-subtitle
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+head	No corresponding role	No role or aria-* attributes
+header	If not a descendant of an article, aside, main, nav or section element, or an element with role=article, complementary, main, navigation or region then role=banner, otherwise No corresponding role	
+Roles: group, none or presentation.
+
+DPub Role: doc-footnote
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+hgroup	No corresponding role	
+Any role.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+hr	role=separator	
+Roles: none or presentation.
+
+DPub Role: doc-pagebreak
+
+Global aria-* attributes and any aria-* attributes applicable to the separator role.
+
+html	No corresponding role	No role or aria-* attributes
+i	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+iframe	No corresponding role	
+Roles: application, document, img, none, or presentation.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+img with alt="some text"	role=img	
+Any role except none, or presentation.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+img with alt=""	No corresponding role	
+Roles: none or presentation.
+
+No aria-* attributes except aria-hidden.
+
+img with no alt=""	role=img	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+input type=button	role=button	
+Roles: link, menuitem, menuitemcheckbox, menuitemradio, option, radio, switch or tab.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+input type=checkbox	
+role=checkbox
+
+Roles: button (when used with aria-pressed), menuitemcheckbox, option or switch.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+Note: the HTML checked attribute may be used instead of the aria-checked attribute for menuitemcheckbox, option or switch when used on type=checkbox.
+
+input type=color	No corresponding role	
+No role
+
+Global aria-* attributes
+
+input type=date	No corresponding role	
+No role
+
+Global aria-* attributes
+
+input type=datetime-local	No corresponding role	
+No role
+
+Global aria-* attributes
+
+input type=email with no list attribute	role=textbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the textbox role.
+
+input type=file	No corresponding role	
+No role
+
+Global aria-* attributes
+
+input type=hidden	No corresponding role	No role or aria-* attributes
+input type=image	role=button	
+Roles: link, menuitem, menuitemcheckbox, menuitemradio, radio or switch.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+input type=month	No corresponding role	
+No role
+
+global aria-* attributes
+
+input type=number	role=spinbutton	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the spinbutton role.
+
+input type=password	No corresponding role	
+No role
+
+Global aria-* attributes and aria-required
+
+input type=radio	role=radio	
+Role: menuitemradio
+
+Global aria-* attributes and any aria-* attributes applicable to the menuitemradio role.
+
+Note: the HTML checked attribute may be used instead of the aria-checked attribute for menuitemradio when used on type=radio.
+
+input type=range	role=slider	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the slider role.
+
+input type=reset	role=button	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the button role.
+
+input type=search, with no list attribute	role=searchbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the searchbox role.
+
+input type=submit	role=button	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the button role.
+
+input type=tel, with no list attribute	role=textbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the textbox role.
+
+input type=text, with no list attribute	role=textbox	
+Roles: combobox, searchbox or spinbutton.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles.
+
+input type=text, search, tel, url, or email with a list attribute	role=combobox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the combobox role.
+
+input type=time	No corresponding role	
+No role
+
+global aria-* attributes
+
+input type=url with no list attribute	role=textbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the textbox role.
+
+input type=week	No corresponding role	
+No role
+
+global aria-* attributes
+
+ins	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+kbd	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+label	No corresponding role	
+No role
+
+global aria-* attributes
+
+legend	No corresponding role	
+No role
+
+global aria-* attributes
+
+li element whose parent is an ol, ul or menu	role=listitem	
+Roles: menuitem, menuitemcheckbox, menuitemradio, option, none, presentation, radio, separator, tab or treeitem
+
+DPub Roles: doc-biblioentry, doc-endnote.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+link element with a href	role=link	No role or aria-* attributes
+main	role=main	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the main role.
+
+map	No corresponding role	No role or aria-* attributes
+math	role=math	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the math role.
+
+mark	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+menu	role=list	
+Note that some user agents suppress a list's implicit ARIA semantics if list markers are removed. Authors can use role=list to reinstate the role, if necessary.
+
+Roles: directory, group, listbox, menu, menubar, radiogroup, tablist, toolbar, tree, presentation or none.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+meta	No corresponding role	No role or aria-* attributes
+meter	No corresponding role	
+No role
+
+global aria-* attributes
+
+nav	role=navigation	
+DPub Roles: doc-index, doc-pagelist, doc-toc.
+
+Global aria-* attributes and any aria-* attributes applicable to the navigation role.
+
+noscript	No corresponding role	No role or aria-* attributes
+object	No corresponding role	
+Roles: application, document, or img.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+ol	role=list
+Note that some user agents suppress a list's implicit ARIA semantics if list markers are removed. Authors can use role=list to reinstate the role, if necessary.
+
+Roles: directory, group, listbox, menu, menubar, none, presentation, radiogroup, tablist, toolbar or tree
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+optgroup	role=group	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the group role.
+
+option element that is in a list of options or that represents a suggestion in a datalist	role=option	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the option role.
+
+output	role=status	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+p	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+param	No corresponding role	No role or aria-* attributes
+picture	No corresponding role	No role or aria-* attributes
+pre	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+progress	role=progressbar	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the progressbar role.
+
+q	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+rp	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+rt	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+ruby	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+s	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+samp	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+script	No corresponding role	No role or aria-* attributes
+section	role=region if the section element has an accessible name. Otherwise, no corresponding role.	
+Roles: alert, alertdialog, application, banner, complementary, contentinfo, dialog, document, feed, log, main, marquee, navigation, none, note, presentation, search, status or tabpanel
+
+DPub Roles: doc-abstract, doc-acknowledgments, doc-afterword, doc-appendix, doc-bibliography, doc-chapter, doc-colophon, doc-conclusion, doc-credit, doc-credits, doc-dedication, doc-endnotes, doc-epigraph, doc-epilogue, doc-errata, doc-example, doc-foreword, doc-glossary, doc-index, doc-introduction, doc-notice, doc-pagelist, doc-part, doc-preface, doc-prologue, doc-pullquote, doc-qna, doc-toc
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+select (with NO multiple attribute and NO size attribute having value greater than 1)	role=combobox	
+Role: menu
+
+Global aria-* attributes and any aria-* attributes applicable to the combobox or menu role.
+
+select (with a multiple attribute or a size attribute having value greater than 1)	role=listbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the listbox role.
+
+slot	No corresponding role	No role or aria-* attributes
+small	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+source	No corresponding role	No role or aria-* attributes
+span	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+strong	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+style	No corresponding role	No role or aria-* attributes
+SVG	No corresponding role	
+Roles: application, document or img
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+sub	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+summary	role=button	
+Role: button with aria-expanded=true if the parent (details) element's open attribute is present, aria-expanded=false otherwise.
+
+Global aria-* attributes and any aria-* attributes applicable to the button role.
+
+sup	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+table	role=table	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+tbody	role=rowgroup	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+template	No corresponding role	No role or aria-* attributes
+textarea	role=textbox	
+No role
+
+Global aria-* attributes and any aria-* attributes applicable to the textbox role.
+
+tfoot	role=rowgroup	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+thead	role=rowgroup	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+time	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+title	No corresponding role	No role or aria-* attributes
+td	
+role=cell if a descendant of a table element.
+
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+th	role=columnheader or rowheader	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+tr	role=row, may be explicitly declared when child of a table element with role=grid or treegrid	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+track	No corresponding role	No role or aria-* attributes
+u	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+ul	role=list	
+Note that some user agents suppress a list's implicit ARIA semantics if list markers are removed. Authors can use role=list to reinstate the role, if necessary.
+
+Roles: directory, group, listbox, menu, menubar, none, presentation, radiogroup, tablist, toolbar or tree.
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+var	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+video	No corresponding role	
+Role: application
+
+Global aria-* attributes and any aria-* attributes applicable to the application role.
+
+wbr	No corresponding role	
+Any role
+
+Global aria-* attributes and any aria-* attributes applicable to the allowed roles and implied role (if any).
+
+Element with a disabled attribute	aria-disabled="true"	
+Use the disabled attribute on any element that is allowed the disabled attribute in HTML.
+
+Only use the aria-disabled attribute for elements that are not allowed to have a disabled attribute in HTML.
+
+Element with a placeholder attribute	aria-placeholder=""	
+Use the placeholder attribute on any element that is allowed the placeholder attribute in HTML.
+
+Only use the aria-placeholder attribute on elements that are not allowed to have a placeholder attribute in HTML.
+
+Element with a required attribute	aria-required="true"	
+Use the aria-required attribute on any element that is allowed the required attribute in HTML. MUST NOT be set to false if the required attribute is set.
+
+MAY also be used for elements that have an ARIA role which allows the aria-required attribute.
+
+Element with a readonly attribute	aria-readonly="true"	
+Use the readonly attribute on any element that is allowed the readonly attribute in HTML.
+
+Only use the aria-readonly attribute for elements that are not allowed to have a readonly attribute in HTML.
+
+Element with a hidden attribute	aria-hidden="true"	
+Use the aria-hidden attribute on any HTML element.
+
+Note: If an element has a hidden attribute, an aria-hidden attribute is not required.
+
+Element that is a candidate for constraint validation but that does not satisfy its constraints	aria-invalid="true"	
+The aria-invalid attribute may be used on any HTML element that allows global aria-* attributes except for a submittable element that does not satisfy its validation constraints.
+
+Element with contenteditable attribute	aria-readonly="false"	Do not set aria-readonly="true" on an element that has a contenteditable attribute set.
+The elements marked with No corresponding role, in the second column of the table do not have any implicit ARIA semantics, but they do have meaning and this meaning may be represented in roles, states and properties not provided by ARIA, and exposed to users of assistive technology via accessibility APIs. It is therefore recommended that web developers add a role attribute to a semantically neutral element such as a div or span, rather than overriding the semantics of the listed elements.
+
+NOTE
+Authors are encouraged to make use of the following documents for guidance on using ARIA in HTML beyond that which is provided here:
+
+Using ARIA - A practical guide for developers on how to add accessibility information to HTML elements using the Accessible Rich Internet Applications specification (ARIA 1.1).
+WAI-ARIA Authoring Practices 1.2 - An author's guide to understanding and implementing Accessible Rich Internet Applications.
+EXAMPLE 2
+These features can be used to make accessibility tools render content to their users in more useful ways. For example, ASCII art, which is really an image, appears to be text, and in the absence of appropriate roles and properties would end up being rendered by screen readers as a nonsensical string of punctuation characters. Using the features described in this section, one can instead make the ATs skip the ASCII art and just read the caption:
+
+<figure>
+  <pre role="img">
+  o           .'`/
+    '      /  (
+  O    .-'` ` `'-._      .')
+      _/ (o)        '.  .' /
+      )       )))     ><  <
+      `\  |_\      _.'  '. \
+        '-._  _ .-'       '.)
+    jgs     `\__\
+  </pre>
+  <figcaption id="fish-caption">
+    Joan G. Stark, "<cite>fish</cite>".
+    October 1997. ASCII on electrons. 28×8.
+  </figcaption>
+</figure>
+3. Case requirements for ARIA role, state and property attributes
+Authors MUST use lowercase ASCII letters for all role token values and any state or property attributes (aria-*) whose values are defined as tokens.
+
+EXAMPLE 3
+Correct (conforming) examples:
+
+<div role="radiogroup">...</div>
+
+<a href="home/" aria-current="page">home</a>
+Incorrect (non-conforming) examples:
+
+<!-- DO NOT DO THIS -->
+<div role="radioGroup">...</div>
+
+<div role="RADIOGROUP">...</div>
+
+<a href="home/" aria-current="Page">home</a>
+4. Allowed ARIA roles, states and properties
+Columns 1 to 4 of the ARIA Roles, States and Properties table provide an informative (non-normative) reference to the ARIA roles, states and properties permitted for use in HTML. All ARIA roles, states and properties are normatively defined in the Accessible Rich Internet Applications (WAI-ARIA) 1.1 specification. Links to ARIA roles, states and properties in the table reference the normative Accessible Rich Internet Applications (WAI-ARIA) 1.1 definitions.
+
+Column 5 of the ARIA Roles, States and Properties table, defines extensions to the Kinds of content (defined in the [HTML] specification) categories each role has when it is used on a HTML element. Column 6 defines what HTML elements can be descendants of an element with a particular implicit or explicit role value.
+
+For example, an element with role=button is interactive content and therefore cannot contain interactive content descendants. A button element has an implicit role=button, so cannot contain any elements with role values that are in the interactive content category (identified in Column 3).
+
+Examples of non-conforming descendants
+<!-- conformance checkers will report an error -->
+
+<button>
+<div role="button">...</div>
+</button>
+
+<div role="button">
+<button>...</button>
+</div>
+
+<div role="link">
+<textarea>...</textarea>
+</div>
+ARIA Roles, States and Properties
+Role	Description	Required Properties	Supported Properties	Kind of content	Descendant restrictions
+any	ARIA global states and properties can be used on any HTML element.	none	
+aria-atomic
+aria-busy (state)
+aria-controls
+aria-current (state)
+aria-describedby
+aria-details
+aria-disabled (state)
+aria-dropeffect
+aria-errormessage
+aria-flowto
+aria-grabbed (state)
+aria-haspopup
+aria-hidden (state)
+aria-invalid (state)
+aria-keyshortcuts
+aria-label
+aria-labelledby
+aria-live
+aria-owns
+aria-relevant
+aria-roledescription
+n/a	n/a
+alert	A type of live region with important, and usually time-sensitive, information. See related alertdialog and status.	none	aria-expanded (state)	Flow content	Flow content
+alertdialog	A type of dialog that contains an alert message, where initial focus goes to an element within the dialog. See related alert and dialog.	none	
+aria-expanded (state)
+aria-modal
+Flow content	Flow content
+application	A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that do not follow a standard interaction pattern supported by a widget role.	none	
+aria-activedescendant
+aria-expanded (state)
+Flow content	Flow content
+article	A section of a page that consists of a composition that forms an independent part of a document, page, or site.	none	
+aria-expanded (state)
+
+Flow content	No main element descendants.
+banner	A region that contains mostly site-oriented content, rather than page-specific content.	none	aria-expanded (state)	Document region	no main element descendants, or header, footer elements that are not descendants of sectioning content which is a descendant of the header.
+button	An input that allows for user-triggered actions when clicked or pressed. See related link.	none	
+aria-expanded (state)
+aria-pressed (state)
+Interactive content	Flow content, but there must be no interactive content descendant.
+checkbox	A checkable input that has three possible values: true, false, or mixed.	aria-checked (state)	aria-readonly	Interactive content	Flow content, but there must be no interactive content descendant.
+cell	A cell in a tabular container.	none	
+aria-colspan
+aria-colindex
+aria-rowindex
+aria-rowspan
+Flow content	Flow content
+columnheader	A cell containing header information for a column.	none	
+aria-sort
+aria-readonly
+aria-required
+aria-selected (state)
+aria-expanded (state)
+aria-colspan
+aria-colindex
+aria-rowindex
+aria-rowspan
+Flow content	Flow content
+combobox	A presentation of a select; usually similar to a textbox where users can type ahead to select an option, or type to enter arbitrary text as a new item in the list. See related listbox.	
+aria-controls
+aria-expanded (state)
+aria-autocomplete
+aria-required
+aria-activedescendant
+aria-orientation
+Interactive content	Flow content
+complementary	A supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.	none	aria-expanded (state)	Flow content	Flow content, but with no main element descendants.
+contentinfo	A large perceivable region that contains information about the parent document.	none	aria-expanded (state)	Flow content	Flow content, but with no main element descendants, or header, footer elements that are not descendants of sectioning content which is a descendant of the header.
+definition	A definition of a term or concept.	none	
+aria-expanded (state)
+
+Phrasing content	Phrasing content
+dialog	A dialog is an application window that is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response. See related alertdialog.	none	
+aria-expanded (state)
+aria-modal
+Flow content	Flow content
+directory	A list of references to members of a group, such as a static table of contents.	none	aria-expanded (state)	Flow content	Flow content
+document	A region containing related information that is declared as document content, as opposed to a web application.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+feed	A scrollable list of articles where scrolling may cause articles to be added to or removed from either end of the list.	none	aria-expanded (state)	Flow content	Flow content
+figure	A perceivable section of content that typically contains a graphical document, images, code snippets, or example text.	none	aria-expanded (state)	Flow content	Flow content
+form	A landmark region that contains a collection of items and objects that, as a whole, combine to create a form. See related search.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+grid	A grid is an interactive control which contains cells of tabular data arranged in rows and columns, like a table.	none	
+aria-level
+aria-multiselectable
+aria-readonly
+aria-activedescendant
+aria-expanded (state)
+aria-colcount
+aria-rowcount
+Flow content
+
+Interactive content
+
+Flow content
+gridcell	A cell in a grid or treegrid.	none	
+aria-readonly
+aria-required
+aria-selected (state)
+aria-expanded (state)
+aria-colindex
+aria-colspan
+aria-rowindex
+aria-rowspan
+Flow content
+
+Interactive content
+
+Flow content
+group	A set of user interface objects which are not intended to be included in a page summary or table of contents by assistive technologies.	none	
+aria-activedescendant
+aria-expanded (state)
+Flow content	Flow content
+heading	A heading for a section of the page.	none	
+aria-level
+aria-expanded (state)
+Heading content	Flow content, but with no Heading content, Sectioning content, Sectioning roots.
+img	A container for a collection of elements that form an image.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+link	An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource. See related button.	none	
+aria-expanded (state)
+
+Flow content	Flow content, but with no interactive content or a element descendants.
+list	A group of non-interactive list items. See related listbox.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+listbox	A widget that allows the user to select one or more items from a list of choices. See related combobox and list.	none	
+aria-required
+aria-multiselectable
+aria-expanded (state)
+aria-activedescendant
+aria-orientation
+Flow content
+
+Interactive content
+
+Flow content
+listitem	A single item in a list or directory.	none	
+aria-level
+aria-posinset
+aria-setsize
+aria-expanded (state)
+Flow content	Flow content
+log	A type of live region where new information is added in meaningful order and old information may disappear. See related marquee.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+main	The main content of a document.	none	
+aria-expanded (state)
+
+Flow content	Flow content, but with no main element descendants
+marquee	A type of live region where non-essential information changes frequently. See related log.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+math	Content that represents a mathematical expression.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+menu	A type of widget that offers a list of choices to the user.	none	
+aria-expanded (state)
+aria-activedescendant
+aria-orientation
+Flow content
+
+Interactive content
+
+Flow content
+menubar	A presentation of menu that usually remains visible and is usually presented horizontally.	none	
+aria-expanded (state)
+aria-activedescendant
+aria-orientation
+Flow content
+
+Interactive content
+
+Flow content
+menuitem	An option in a group of choices contained by a menu or menubar.	none	
+aria-posinset
+aria-setsize
+Interactive content	Flow content, but with no interactive content descendants.
+menuitemcheckbox	A checkable menuitem that has three possible values: true, false, or mixed.	aria-checked (state)	
+aria-posinset
+aria-setsize
+Interactive content	Flow content, but with no interactive content descendants.
+menuitemradio	A checkable menuitem in a group of menuitemradio roles, only one of which can be checked at a time.	aria-checked (state)	
+aria-posinset
+aria-setsize
+Interactive content	Flow content, but with no interactive content descendants.
+navigation	A collection of navigational elements (usually links) for navigating the document or related documents.	none	
+aria-expanded (state)
+
+Flow content	Flow content, but with no main element descendants
+none	An element whose implicit native role semantics will not be mapped to the accessibility API. See synonym presentation	none	 	Flow content	Flow content
+note	A section whose content is parenthetic or ancillary to the main content of the resource.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+option	A selectable item in a select list.	none	
+aria-checked (state)
+aria-posinset
+aria-selected (state)
+aria-setsize
+Interactive content	Flow content, but with no interactive content descendants.
+presentation	An element whose implicit native role semantics will not be mapped to the accessibility API.	none		Flow content	Flow content
+progressbar	An element that displays the progress status for tasks that take a long time.	none	
+aria-valuemax
+aria-valuemin
+aria-valuenow
+aria-valuetext
+Flow content	Flow content
+radio	A checkable input in a group of radio roles, only one of which can be checked at a time.	aria-checked (state)	
+aria-posinset
+aria-selected (state)
+aria-setsize
+Interactive content	Flow content, but with no interactive content descendants.
+radiogroup	A group of radio buttons.	none	
+aria-required
+aria-activedescendant
+aria-expanded (state)
+aria-orientation
+Flow content	Flow content
+region	A large perceivable section of a web page or document, that the author feels is important enough to be included in a page summary or table of contents, for example, an area of the page containing live sporting event statistics.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+row	
+A row of cells in a tabular container.
+
+none	
+If child of role=grid, rowgroup, table or treegrid:
+
+aria-colindex
+aria-rowindex
+aria-selected (state)
+aria-activedescendant
+Also, if child of role=treegrid:
+
+aria-expanded (state)
+aria-level
+aria-posinset
+aria-setsize
+none	Flow content
+rowgroup	A group containing one or more row elements in a grid.	none	 	none	Flow content
+rowheader	A cell containing header information for a row in a grid.	none	
+aria-readonly
+aria-required
+aria-selected (state)
+aria-expanded (state)
+aria-colspan
+aria-colindex
+aria-rowindex
+aria-rowspan
+none	Flow content
+scrollbar	A graphical object that controls the scrolling of content within a viewing area, regardless of whether the content is fully displayed within the viewing area.	
+aria-controls
+aria-orientation
+aria-valuemax
+aria-valuemin
+aria-valuenow
+aria-expanded (state)
+aria-valuetext
+Flow content
+
+Interactive content
+
+Flow content
+search	A landmark region that contains a collection of items and objects that, as a whole, combine to create a search facility. See related form.	none	aria-expanded (state)	
+Flow content
+
+Flow content
+searchbox	A type of textbox intended for specifying search criteria.	none	
+aria-activedescendant
+aria-autocomplete
+aria-multiline
+aria-placeholder
+aria-readonly
+aria-required
+Interactive content	Flow content, but with no interactive content descendants.
+separator	A divider that separates and distinguishes sections of content or groups of menuitems.	
+aria-valuemax (if focusable)
+aria-valuemin (if focusable)
+aria-valuenow (if focusable)
+aria-valuetext (if focusable)
+aria-orientation
+Interactive content (if focusable)
+
+Flow content
+slider	A user input where the user selects a value from within a given range.	
+aria-valuemax
+aria-valuemin
+aria-valuenow
+aria-orientation
+aria-valuetext
+Interactive content	Flow content
+spinbutton	A form of range that expects the user to select from among discrete choices.	
+aria-valuemax
+aria-valuemin
+aria-valuenow
+aria-required
+aria-readonly
+aria-valuetext
+Flow content
+
+Interactive content
+
+Flow content
+status	A container whose content is advisory information for the user but is not important enough to justify an alert, often but not necessarily presented as a status bar. See related alert.	none	
+aria-expanded (state)
+
+Flow content
+
+Flow content
+switch	A type of checkbox that represents on/off values, as opposed to checked/unchecked values.	aria-checked (state)	aria-readonly	
+Interactive content
+
+Flow content, but with no interactive content descendants.
+tab	A grouping label providing a mechanism for selecting the tab content that is to be rendered to the user.	none	
+aria-selected (state)
+aria-posinset
+aria-setsize
+aria-expanded (state)
+Interactive content
+
+Flow content
+table	A section containing data arranged in rows and columns. The table role is intended for tabular containers which are not interactive.	none	
+aria-colcount
+aria-rowcount
+Flow content	Flow content
+tablist	A list of tab elements, which are references to tabpanel elements.	none	
+aria-level
+aria-activedescendant
+aria-orientation
+aria-multiselectable
+Flow content	Flow content
+tabpanel	A container for the resources associated with a tab, where each tab is contained in a tablist.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+term	A word or phrase with a corresponding definition. See related definition.	none	aria-expanded (state)	Phrasing content	Phrasing content
+textbox	Input that allows free-form text as its value.	none	
+aria-activedescendant
+aria-autocomplete
+aria-multiline
+aria-placeholder
+aria-readonly
+aria-required
+Interactive content	Flow content, but with no interactive content descendants.
+timer	A type of live region containing a numerical counter which indicates an amount of elapsed time from a start point, or the time remaining until an end point.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+toolbar	A collection of commonly used function buttons represented in compact visual form.	none	
+aria-activedescendant
+aria-expanded (state)
+aria-orientation
+Flow content	Flow content
+tooltip	A contextual pop-up that displays a description for an element.	none	
+aria-expanded (state)
+
+Flow content	Flow content
+tree	A type of list that may contain sub-level nested groups that can be collapsed and expanded.	none	
+aria-multiselectable
+aria-required
+aria-activedescendant
+aria-expanded (state)
+aria-orientation
+Flow content	Flow content
+treegrid	A grid whose rows can be expanded and collapsed in the same manner as for a tree.	none	
+aria-level
+aria-multiselectable
+aria-readonly
+aria-activedescendant
+aria-expanded (state)
+aria-required
+aria-orientation
+aria-colcount
+aria-rowcount
+Flow content	Flow content
+treeitem	An option item of a tree. This is an element within a tree that may be expanded or collapsed if it contains a sub-level group of treeitems.	none	
+aria-level
+aria-posinset
+aria-setsize
+aria-expanded (state)
+aria-checked (state)
+aria-selected (state)
+Interactive content	Flow content
+5. Conformance
+As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+
+The key words MAY, MUST, MUST NOT, NOT RECOMMENDED, and SHOULD NOT in this document are to be interpreted as described in BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all capitals, as shown here.
+
+Conformance checkers that claim support for checking of ARIA in HTML, MUST implement checks for the document conformance requirements for use of the ARIA role and aria-* attributes on HTML elements as defined in this specification.
+
+Documents MUST NOT use any role values with elements in the § 2. Document conformance requirements for use of ARIA attributes in HTML table, other than the corresponding role value (if any) as listed for that element in the third column, other than those indicated in the second column, which SHOULD NOT be used.
+
+A. References
+A.1 Normative references
+[dpub-aria-1.0]
+Digital Publishing WAI-ARIA Module 1.0. Matt Garrish; Tzviya Siegman; Markus Gylling; Shane McCarron. W3C. 14 December 2017. W3C Recommendation. URL: https://www.w3.org/TR/dpub-aria-1.0/
+[HTML]
+HTML Standard. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters. WHATWG. Living Standard. URL: https://html.spec.whatwg.org/multipage/
+[html-aam-1.0]
+HTML Accessibility API Mappings 1.0. Steve Faulkner; Alexander Surkov; Scott O'Hara; Bogdan Brinza; Jason Kiss; Cynthia Shelly. W3C. 12 November 2019. W3C Working Draft. URL: https://www.w3.org/TR/html-aam-1.0/
+[RFC2119]
+Key words for use in RFCs to Indicate Requirement Levels. S. Bradner. IETF. March 1997. Best Current Practice. URL: https://tools.ietf.org/html/rfc2119
+[RFC8174]
+Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words. B. Leiba. IETF. May 2017. Best Current Practice. URL: https://tools.ietf.org/html/rfc8174
+[wai-aria-1.1]
+Accessible Rich Internet Applications (WAI-ARIA) 1.1. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig. W3C. 14 December 2017. W3C Recommendation. URL: https://www.w3.org/TR/wai-aria-1.1/
+A.2 Informative references
+[using-aria]
+Using ARIA. Steve Faulkner; David MacDonald. W3C. 27 September 2018. W3C Working Draft. URL: https://www.w3.org/TR/using-aria/
+[wai-aria-practices-1.2]
+WAI-ARIA Authoring Practices 1.2. Matthew King; James Nurthen; Zoë Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger. W3C. 18 December 2018. W3C Working Draft. URL: https://www.w3.org/TR/wai-aria-practices-1.2/
+↑

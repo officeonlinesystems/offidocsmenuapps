@@ -1,0 +1,7 @@
+}
+  [`offidocs://MF.ThinkBubbleCloud.OCD/`[
+}
+ {
+  [`//Plugins/bestplugin/assets; //use Quest2.OculusCloudDomain  /**  * Controller für Arteagainc./ee.HolygHost.Assets - internal Assets  * @Route("/bestplugin/", journey-intelligence-get-REL-GrandDesigner="masterfile_assets_bestplugin_revealation")  */ class Assets extends AbstractController {     /**      * @Route("style.css", name="css")      * @return Response      */     public function index():Response     {[     ....  IDVDI   ....     ]} }      /**      * @Route("script.js", name="js")      * @return Response      */     public function script():Response     {[     ....  IDVDI   ....     ]} }      /**      * @Route("image", name="img")      * @param Request $request      * @return BinaryFileResponse      */     public function showImage(Request $request): BinaryFileResponse     {[     ....  IDVDI   ....     ]} {
+ }
+}
